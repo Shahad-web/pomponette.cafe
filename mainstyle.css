@@ -1,0 +1,1100 @@
+/* General Styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Scroll Up Button Styles */
+#scrollUp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #701d23;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1000; /* Higher value to ensure it appears above other elements */
+}
+
+
+#scrollUp:hover {
+    background-color: #DBA5AE;
+}
+
+/* Header Styles */
+header {
+    size: 50px;
+    background-color: #701d23;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header img {
+    max-width: 250px; /* Responsive width */
+    height: auto;
+}
+.order-btn{
+    border-radius: 10px;
+
+}
+/* Navigation Styles */
+nav {
+    background-color: #701d23; /* Main background color */
+    padding: 5px 0; /* Reduced vertical padding */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* Retained shadow for depth */
+}
+
+nav ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    text-align: center; /* Center navigation items */
+}
+
+nav ul li {
+    display: inline; /* Keep items inline */
+    margin: 0 20px; /* Adjusted margin for better spacing */
+}
+
+nav a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    font-size: 14px; /* Smaller font size */
+    padding: 8px 12px; /* Reduced padding for a slimmer appearance */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+nav a:hover {
+    background-color: #a52a31; /* Darker background on hover */
+}
+
+nav a.active {
+    background-color: #a52a31; /* Same color as hover */
+    border-bottom: 2px solid #fff; /* Underline the active link */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f4f4f4;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+.hero h1 {
+    font-size: 36px;
+    color: #701d23;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #701d23;
+    margin-bottom: 30px;
+}
+
+/* Hero Section */
+.hero {
+    height: 30vh; /* Full height for the hero section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Ensure the background covers the entire section */
+    background-position: center;
+    position: relative; /* Position relative for overlay */
+    color: white; /* Text color */
+    text-align: center;
+    overflow: hidden; /* Hide overflow for smooth animations */
+}
+
+.hero::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(210, 193, 196, 0.5); /* Lighter gradient overlay */
+    z-index: 1; /* Ensure it sits above the image but below the text */
+    transition: background 0.5s ease; /* Smooth transition for overlay */
+}
+
+#hero-heading, #hero-paragraph, .cta-button {
+    position: relative; /* Position relative to stack above the overlay */
+    z-index: 2; /* Ensure text is above the overlay */
+    opacity: 0; /* Start hidden for fade-in */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade in to full visibility */
+    }
+}
+
+#hero-heading {
+    font-size: 48px; /* Adjust heading font size */
+    margin-bottom: 15px;
+    animation: slideInDown 1s forwards; /* Slide-in animation */
+    animation-delay: 0.5s; /* Delay for smoother appearance */
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#hero-paragraph {
+    font-size: 24px; /* Adjust paragraph font size */
+    margin-bottom: 30px;
+    animation: slideInUp 1s forwards; /* Slide-up animation */
+    animation-delay: 1s; /* Delay for smoother appearance */
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background-color: #701d23;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    margin-top: 20px;
+    opacity: 0; /* Start hidden for fade-in */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+    animation-delay: 1.5s; /* Delay for smoother appearance */
+}
+
+.cta-button:hover {
+    background-color: #a52a2a;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+/* Call to Action Button */
+.cta-button {
+    display: inline-block; /* Make it behave like a button */
+    background-color: #701d23; /* Button background color */
+    color: white; /* Text color */
+    padding: 12px 20px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Transition for hover effect */
+    margin-top: 20px; /* Space above the button */
+}
+
+.cta-button:hover {
+    background-color: #DBA5AE; /* Darker shade on hover */
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+}
+
+.feature-item {
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.feature-item h4 {
+    color: #701d23;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h3 {
+    color: #701d23;
+    margin-bottom: 20px;
+}
+
+.testimonial-item {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* About Page Styles */
+
+footer {
+    text-align: center; /* Center text in the footer */
+    margin-top: 40px; /* Space above the footer */
+    padding: 20px 0; /* Padding for footer */
+    background-color: #f9f9f9; /* Light background for footer */
+}
+
+footer p, .social-media {
+    color: #555; /* Subtle color for footer text */
+}
+
+.social-media a {
+    margin: 0 10px; /* Margin between social links */
+    color: #701d23; /* Match footer link color to theme */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+/* Header Styling */
+.about-header {
+    position: relative;
+    height: 45vh;
+    color: #701d23;
+}
+
+.header-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-overlay h1 {
+    font-size: 3rem;
+    animation: fadeIn 2s;
+}
+
+.header-overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 3s;
+}
+
+
+.hero2 {
+    color: #701d23; /* Text color */
+    padding: 60px 20px; /* Padding around the content */
+    text-align: center; /* Center-align text */
+    position: relative; /* Position for any absolute children */
+    border-radius: 10px; /* Rounded corners for a softer look */
+}
+
+.hero2:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Place overlay below text */
+}
+
+.hero2 h1 {
+    font-size: 3rem;
+    margin: 0;
+    z-index: 2; /* Position text above overlay */
+}
+
+.hero2 p {
+    font-size: 1.5rem;
+    z-index: 2; /* Position text above overlay */
+}
+
+/* Opening Hours Section */
+.opening-hours {
+    background-color: #ffffff; /* White background for clarity */
+    padding: 30px; /* Padding around the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center align the text */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+.opening-hours h2 {
+    color: #701d23; /* Main color for heading */
+    font-size: 2rem; /* Size of the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.opening-hours ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.opening-hours li {
+    font-size: 1.2rem; /* Size of list items */
+    margin: 10px 0; /* Space between list items */
+    color: #333; /* Darker color for text */
+}
+
+.opening-hours li strong {
+    color: #701d23; /* Main color for strong text */
+}
+
+/* Reservation Form Section */
+.reservation-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.reservation-form h2 {
+    color: #701d23; /* Main color */
+    text-align: center;
+}
+
+.reservation-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #701d23; /* Main color for border */
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.reservation-form input:focus {
+    border-color: #DBA5AE; /* Lighter shade on focus */
+    outline: none; /* Remove default outline */
+}
+
+.reservation-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #701d23; /* Main color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #DBA5AE; /* Lighter shade on hover */
+}
+
+/* Confirmation Message Section */
+.confirmation-message {
+    background-color: #e0ffe0; /* Light green background for success */
+    border: 2px solid #4CAF50; /* Darker green border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the message */
+    text-align: center; /* Center align text */
+    margin: 20px 0; /* Space around the message */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.confirmation-message h3 {
+    color: #4CAF50; /* Dark green for heading */
+    font-size: 1.8em; /* Larger font size for emphasis */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+.confirmation-message p {
+    color: #333; /* Dark gray for text */
+    font-size: 1.1em; /* Slightly larger font for readability */
+}
+
+/* Menu Section */
+.menu-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+    text-align: center;
+    margin: 15px;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.menu-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.menu-item img:hover {
+    transform: rotate(2deg);
+}
+
+.menu-item h5 {
+    font-size: 16px;
+    color: #DBA5AE;
+    font-weight: bold; /* Make the text bold */
+    min-height: 60px; /* Ensures consistent title space */
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.menu-item .description {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 10px;
+    min-height: 60px; /* Ensures consistent title space */
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.price {
+    font-size: 16px;
+    color: #701d23;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.menu-item .rating {
+    font-size: 18px;
+    color: #ffa500; /* Star color */
+    margin-top: 5px;
+}
+.order-page {
+    width: auto; /* Set maximum width for the order page */
+    margin: 20px auto; /* Center the page */
+    padding: 20px; /* Add padding */
+    background-color: #fff; /* White background for the main content */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+}
+
+.hero3 {
+    text-align: center; /* Centered text */
+    margin-bottom: 20px; /* Space below the hero section */
+}
+
+.hero3 h1 {
+    font-size: 2.5em; /* Large font size for the title */
+    color: #701d23; /* Primary color for the title */
+    margin: 0; /* Remove default margin */
+}
+
+.hero3 p {
+    font-size: 1.2em; /* Moderate font size for the description */
+    color: #555; /* Dark gray color for the text */
+}
+
+.product-info {
+    text-align: center; /* Centered text for product info */
+}
+
+.product-info img {
+    max-width: 50%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px; /* Rounded corners for image */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for image */
+}
+
+.product-info h2 {
+    font-size: 2em; /* Large font size for product name */
+    color: #701d23; /* Primary color */
+    margin: 10px 0; /* Space above and below */
+}
+
+.product-info .description {
+    font-size: 1.1em; /* Slightly smaller font for description */
+    color: #333; /* Dark gray for description text */
+    margin: 10px 0; /* Space around description */
+}
+
+.product-info .price {
+    font-size: 1.5em; /* Larger font for price */
+    color: #DBA5AE; /* Accent color for price */
+    margin: 10px 0; /* Space around price */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Shadow for emphasis */
+}
+
+.customization, .ingredients {
+    margin-top: 20px; /* Space above sections */
+    padding: 15px; /* Padding inside sections */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 8px; /* Rounded corners for sections */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for sections */
+    text-align: left; /* Align text to the left */
+}
+
+.customization h3, .ingredients h3 {
+    color: #701d23; /* Primary color for section headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.customization label, .ingredients li {
+    display: flex; /* Use flexbox for better alignment */
+    align-items: center; /* Center items vertically */
+    margin: 5px 0; /* Space between items */
+    color: #333; /* Dark gray for text */
+}
+
+.customization input[type="checkbox"], 
+.ingredients li {
+    margin-right: 10px; /* Space between checkbox and label text */
+}
+
+.order-now-btn {
+    background-color: #701d23; /* Accent color for button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners for button */
+    padding: 12px 24px; /* Padding inside button */
+    font-size: 1.2em; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for button */
+    margin-top: 20px; /* Space above button */
+}
+
+.order-now-btn:hover {
+    background-color: #DBA5AE; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Career Opportunities Section */
+.careers, .job-listings, .apply-info {
+    margin-bottom: 40px;
+    text-align: center; /* Center text for all sections */
+}
+
+.careers h2, .apply-info h2 {
+    color: #701d23; /* Heading color */
+}
+
+/* Job Listings Styles */
+.job-listings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.job-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 80%; /* Width for job listings */
+    max-width: 600px; /* Max width for larger screens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Add transition for hover effect */
+}
+
+.job-item:hover {
+    transform: translateY(-5px); /* Hover effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.job-description {
+    margin: 10px 0; /* Spacing around job descriptions */
+}
+
+/* Call to Action Button Styles */
+.cta-button {
+    background-color: #701d23;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    margin-top: 10px; /* Spacing above the button */
+}
+
+.cta-button:hover {
+    background-color: #a52a31; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Feedback Page Container */
+.feedback-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* feedback Styles */
+.feedback {
+    background-color: #701d23; /* Brand color */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.feedback p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+}
+
+/* Feedback Form Styles */
+.feedback-form {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.feedback-form h2 {
+    color: #DBA5AE; /* Match your brand color */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+#name-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#feedback-input {
+    width: 100%;
+    height: 120px; /* Adjust height for better usability */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    resize: none; /* Prevent resizing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#submit-feedback {
+    background-color: #701d23; /* Match your brand color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#submit-feedback:hover {
+    background-color: #a92d36; /* Slightly lighter shade for hover effect */
+}
+
+/* Feedback Display Section */
+.feedback-display {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.feedback-display h2 {
+    color: #DBA5AE; /* Match your brand color */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Feedback Items */
+.feedback-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    color: #333;
+}
+
+.feedback-item:last-child {
+    border-bottom: none; /* Remove border for last item */
+}
+
+/* Feedback Writer Name Styles */
+.feedback-name {
+    font-weight: bold;
+    color: #701d23; /* Match your brand color */
+}
+
+/* Apply Info Section Styles */
+.apply-info {
+    background-color: #fff; /* White background for contrast */
+    padding: 20px; /* Spacing inside the section */
+    border: 1px solid #ccc; /* Light border for definition */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 13px rgba(0, 0, 5, 0.1); /* Soft shadow for depth */
+    margin: 20px auto; /* Center the section with margin */
+    max-width: 1000px; /* Max width for larger screens */
+    text-align: center; /* Center align text */
+}
+
+.apply-info h2 {
+    color: #701d23; /* Heading color matching the cafe's theme */
+    margin-bottom: 15px; /* Spacing below the heading */
+}
+
+.apply-info p {
+    font-size: 16px; /* Slightly larger font for readability */
+    line-height: 1.5; /* Improved line spacing */
+    margin: 0; /* Reset margin for p elements */
+}
+
+.apply-info a {
+    color: #701d23; /* Link color matching the theme */
+    text-decoration: underline; /* Underline links for emphasis */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.apply-info a:hover {
+    color: #DBA5AE; /* Lighter color on hover */
+}
+/* Main Content Styles */
+main {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Application Form Styles */
+.application-form {
+    background-color: #ffffff; /* White background for form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px; /* Padding for the form */
+    margin: 20px auto; /* Center the form */
+    width: 80%; /* Width of the form */
+}
+
+.application-form h2 {
+    color: #701d23; /* Heading color */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    display: block; /* Labels as block elements */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding for inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners for inputs */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resize only */
+}
+
+.submit-button {
+    background-color: #701d23; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.submit-button:hover {
+    background-color: #DBA5AE; /* Darker shade on hover */
+}
+/* Headings */
+h2, h3 {
+    color: #701d23;
+}
+
+.highlight-item h4 {
+    color: #701d23;
+    font-weight: bold;
+}
+
+.highlight-item p {
+    color: #DBA5AE;
+}
+
+.highlights {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.highlights h3 {
+    text-align: center; /* Center the text */
+    color: #701d23; /* Dark red color for the heading */
+    font-size: 30px; /* Size for the highlights heading */
+    margin: 0 auto;
+}
+
+/* Highlight Item Styles */
+.highlight-item {
+    margin: 20px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-item img {
+    width: 170px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.highlight-item p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Contact Form Styles */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start hidden for entrance animation */
+    transform: translateY(20px); /* Slide up effect */
+    animation: fadeInUp 0.6s ease forwards; /* Entrance animation */
+    animation-delay: 0.2s; /* Delay for a smoother effect */
+}
+
+/* Keyframes for entrance animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+    color: #701d23;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input, textarea, select styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Focus effect for inputs and textarea */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #701d23; /* Change border color */
+    box-shadow: 0 0 5px rgba(112, 29, 35, 0.5); /* Add a glow effect */
+}
+
+button {
+    background-color: #701d23;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s; /* Added scaling on hover */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #DBA5AE;
+    transform: scale(1.05); /* Slight scaling */
+}
+
+/* Checkbox Styles */
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* File Input Styles */
+label[for="file"] {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Custom File Input Styles */
+input[type="file"]::-webkit-file-upload-button {
+    background-color: #701d23;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect for custom file input */
+input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #DBA5AE;
+}
+
+
+footer {
+    background-color: #701d23; /*  background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 14px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: #fff; /* Link color */
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.social-media a:hover {
+    color: #DBA5AE; /* color on hover */
+}
