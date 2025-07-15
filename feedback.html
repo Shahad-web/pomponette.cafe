@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the delicious menu at Pomponette Cafe.">
+    <meta name="keywords" content=" feedback, customer, pastries, Pomponette, Cake, cafe">
+    <meta name="author" content="Pomponette Cafe">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" type="image/png" href="img/favicon-08.png"><!-- Link to favicon -->
+
+    <title>Pomponette Cafe - Feedback</title>
+</head>
+<body>
+    <button id="scrollUp">&#8593;</button> <!-- Upward arrow symbol -->
+
+    <div class="container">
+        <header>
+            <img src="img/logocolor-02.png"alt="logo" title="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <div class="feedback-page">
+            <header class="feedback">
+                <h1>Customer Feedback</h1>
+                <p>Your thoughts matter to us!</p>
+            </header>
+        
+            <section class="feedback-form">
+                <h2>Leave Your Feedback</h2>
+                <input type="text" id="name-input" placeholder="Your Name" required />
+                <textarea id="feedback-input" placeholder="Share your thoughts..." required></textarea>
+                <button id="submit-feedback">Submit</button>
+            </section>
+        
+            <section class="feedback-display">
+                <h2>Customer Feedback</h2>
+                <div id="feedback-list">
+                    <!-- Customer feedback will be dynamically added here -->
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; 2024 Pomponette Cafe. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/pomponette.bh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
+                <a href="https://www.facebook.com/PomponetteCafe" target="_blank">Facebook</a> |
+                <a href="https://twitter.com/PomponetteCafe" target="_blank">Twitter</a> |
+                <a href="https://www.linkedin.com/company/pomponette-cafe" target="_blank">LinkedIn</a>
+            </div>
+        </footer>
+    <script>
+      // Get the button
+      const scrollUpButton = document.getElementById("scrollUp");
+
+// Show the button when scrolling down
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollUpButton.style.display = "block";
+    } else {
+        scrollUpButton.style.display = "none";
+    }
+};
+
+// Scroll to the top when the button is clicked
+scrollUpButton.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+document.addEventListener('DOMContentLoaded', () => {
+        const submitButton = document.getElementById('submit-feedback');
+        const feedbackInput = document.getElementById('feedback-input');
+        const nameInput = document.getElementById('name-input');
+        const feedbackList = document.getElementById('feedback-list');
+
+        // Load existing feedback from local storage
+        loadFeedback();
+
+        // Submit feedback
+        submitButton.addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const feedback = feedbackInput.value.trim();
+            if (name && feedback) {
+                const feedbackData = { name, feedback };
+                saveFeedback(feedbackData);
+                addFeedbackToPage(feedbackData);
+                nameInput.value = '';
+                feedbackInput.value = '';
+            } else {
+                alert('Please enter your name and feedback.');
+            }
+        });
+
+        function saveFeedback(feedbackData) {
+            const feedbackList = JSON.parse(localStorage.getItem('feedbackList')) || [];
+            feedbackList.push(feedbackData);
+            localStorage.setItem('feedbackList', JSON.stringify(feedbackList));
+        }
+
+        function loadFeedback() {
+            const feedbackList = JSON.parse(localStorage.getItem('feedbackList')) || [];
+            feedbackList.forEach(addFeedbackToPage);
+        }
+
+        function addFeedbackToPage({ name, feedback }) {
+            const feedbackItem = document.createElement('div');
+            feedbackItem.className = 'feedback-item';
+            feedbackItem.innerHTML = `<strong>${name}</strong><p>${feedback}</p>`;
+            feedbackList.appendChild(feedbackItem);
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the team at Pomponette Cafe!">
+    <meta name="keywords" content="careers, jobs, Pomponette Cafe">
+    <meta name="author" content="Pomponette Cafe">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" type="image/png" href="img/favicon-08.png">
+    <title>Pomponette Cafe - Home</title>
+</head>
+<body>
+    <button id="scrollUp">&#8593;</button> <!-- Upward arrow symbol -->
+    <header>
+        <div class="container">
+            <img src="img/logocolor-02.png"alt="logo" title="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="careers">
+            <h2>Career Opportunities</h2>
+            <p>Join our team of passionate individuals at Pomponette Cafe.</p>
+        </section>
+
+        <section class="job-listings">
+            <h2>Current Openings</h2>
+            <div class="job-item">
+                <h3>Barista</h3>
+                <p class="job-description">Full-time position. Love coffee and customer service? Join us!</p>
+                <a href="barista.html" class="cta-button">Apply Now</a> <!-- Link to the application page -->
+            </div>
+            <div class="job-item">
+                <h3>Kitchen Staff</h3>
+                <p class="job-description">Part-time position. Help us prepare delicious meals!</p>
+                <a href="kitchen.html" class="cta-button">Apply Now</a> 
+                        </div>
+            <div class="job-item">
+                <h3>Manager</h3>
+                <p class="job-description">Full-time position. Lead our team and ensure customer satisfaction!</p>
+                <a href="manager.html" class="cta-button">Apply Now</a> 
+                        </div>
+        </section>
+
+        <section class="apply-info">
+            <h2>How to Apply?</h2>
+            <p>If you’re interested in any of the positions, please send your resume to <a href="mailto:pomponettejobs@cafe.com">pomponettejobs@cafe.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pomponette Cafe. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/pomponette.bh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com/PomponetteCafe" target="_blank">Facebook</a> |
+            <a href="https://twitter.com/PomponetteCafe" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/company/pomponette-cafe" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    <script>
+        // Get the button
+        const scrollUpButton = document.getElementById("scrollUp");
+
+        // Show the button when scrolling down
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollUpButton.style.display = "block";
+            } else {
+                scrollUpButton.style.display = "none";
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        scrollUpButton.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about Pomponette Cafe's mission and vision.">
+    <meta name="keywords" content="reservation, table, coffee, Pomponette Cafe">
+    <meta name="author" content="Pomponette Cafe">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" type="image/png" href="img/favicon-08.png">
+
+    <title> Pomponette Cafe - Reservation </title>
+</head>
+<body>
+    <button id="scrollUp">&#8593;</button> <!-- Upward arrow symbol -->
+
+    <header>
+        <div class="container">
+            <img src="img/logocolor-02.png"alt="logo" title="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   
+        <div class="reservation-page">
+            <div class="hero2">
+                <h1>Make a Reservation</h1>
+                <p>Reserve your table and enjoy our delightful offerings!</p>
+            </div>
+        
+           
+        
+            <section class="reservation-form">
+                <form id="reservation-form">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="date" id="date" required>
+                    <input type="time" id="time" required>
+                    <input type="number" id="guests" placeholder="Number of Guests" min="1" required>
+                    <button type="submit">Reserve Now</button>
+                </form>
+            </section>
+            
+            <section class="confirmation-message" id="confirmation-message" style="display: none;">
+                <h3>Reservation Confirmed!</h3>
+                <p>Thank you for reserving your table. We look forward to welcoming you!</p>
+            </section>
+         <section class="opening-hours">
+                <h2>Opening Hours</h2>
+                <ul>
+                    <li><strong>Monday - Friday:</strong> 8:00 AM - 10:00 PM</li>
+                    <li><strong>Saturday:</strong> 9:00 AM - 11:00 PM</li>
+                    <li><strong>Sunday:</strong> 9:00 AM - 9:00 PM</li>
+                </ul>
+            </section>
+    <footer>
+        <p>&copy; 2024 Pomponette Cafe. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/pomponette.bh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
+            <a href="https://www.facebook.com/PomponetteCafe" target="_blank">Facebook</a> |
+            <a href="https://twitter.com/PomponetteCafe" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/company/pomponette-cafe" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    <script>
+        // Get the button
+        const scrollUpButton = document.getElementById("scrollUp");
+    
+        // Show the button when scrolling down
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollUpButton.style.display = "block";
+            } else {
+                scrollUpButton.style.display = "none";
+            }
+        };
+    
+        // Scroll to the top when the button is clicked
+        scrollUpButton.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    
+        // Handle form submission
+        const reservationForm = document.getElementById("reservation-form");
+        const confirmationMessage = document.getElementById("confirmation-message");
+    
+        reservationForm.onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            confirmationMessage.style.display = "block"; // Show the confirmation message
+            reservationForm.reset(); // Optionally reset the form
+        };
+    </script>
+</body>
+</html>

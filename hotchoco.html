@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the delicious menu at Pomponette Cafe.">
+    <meta name="keywords" content=" menu, hotchoco, Pomponette, cafe">
+    <meta name="author" content="Pomponette Cafe">
+    <link rel="stylesheet" href="mainstyle.css">
+    <link rel="icon" type="image/png" href="img/favicon-08.png"><!-- Link to favicon -->
+
+    <title>Pomponette Cafe - Menu</title>
+</head>
+<body>
+    <button id="scrollUp">&#8593;</button> <!-- Upward arrow symbol -->
+
+    <div class="container">
+        <header>
+            <img src="img/logocolor-02.png" alt="logo" title="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>   
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="reservation.html">Reservation</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+            </nav>
+        </header>
+        <div class="order-page">
+            <div class="hero3">
+                <h1>Our Hot Chocolate Story</h1>
+                <p>Inspired by traditional recipes from around the world, our hot chocolate is crafted with love and the finest ingredients. Each cup is a journey back to cozy winter evenings spent by the fireplace.</p>
+             </div>
+    
+            <div class="product-info">
+                <img src="img/best1.jpg" alt="Hot Chocolate">
+                <p class="description">A warm, comforting blend of rich chocolate and creamy milk, topped with whipped cream.</p>
+                <p class="price">Price: BD 2.50</p>
+                <div class="customization">
+                    <h3>Customize Your Drink</h3>
+                    <p>Select your favorite toppings:</p>
+                    <label><input type="checkbox"> Marshmallows</label>
+                    <label><input type="checkbox"> Chocolate Chips</label>
+                    <label><input type="checkbox"> Caramel Drizzle</label>
+                </div>
+                <div class="ingredients">
+                    <h3>Ingredients</h3>
+                    <ul>
+                        <li>Rich cocoa powder</li>
+                        <li>Whole milk</li>
+                        <li>Whipped cream</li>
+                        <li>Chocolate shavings</li>
+                        <li>Vanilla extract</li>
+                    </ul>
+                </div>
+                <button class="order-now-btn">Order now</button>
+            </div>
+    
+            
+    
+</body>
+</div>
+
+<footer>
+    <p>&copy; 2024 Pomponette Cafe. All rights reserved.</p>
+    <div class="social-media">
+        <a href="https://www.instagram.com/pomponette.bh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com/PomponetteCafe" target="_blank">Facebook</a> |
+        <a href="https://twitter.com/PomponetteCafe" target="_blank">Twitter</a> |
+        <a href="https://www.linkedin.com/company/pomponette-cafe" target="_blank">LinkedIn</a>
+    </div>
+</footer>
+
+<script>
+// Get the button
+const scrollUpButton = document.getElementById("scrollUp");
+
+// Show the button when scrolling down
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollUpButton.style.display = "block";
+    } else {
+        scrollUpButton.style.display = "none";
+    }
+};
+
+// Scroll to the top when the button is clicked
+scrollUpButton.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
+</script>
+</html>
